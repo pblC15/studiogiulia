@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Giulia | Moda feminina e acessórios em Timbó - SC</title>
+<meta name="description" content="Studio Giulia: loja de moda feminina e acessórios em Timbó, Santa Catarina. Atendimento presencial e vendas online.">
+<meta property="og:title" content="Studio Giulia">
+<meta property="og:description" content="Moda feminina e acessórios em Timbó - SC. Atendimento presencial e vendas online.">
+<meta property="og:image" content="img/giulia-logo.png">
+<meta name="theme-color" content="#0E0C0A">
+<link rel="icon" type="image/png" href="img/giulia-simbolo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --ink:#0E0C0A; --ink-2:#1C1814; --text:#1A1714; --muted:#4F4539; --muted-2:#6B5A45;
+  --ivory:#F7F3EC; --sand:#EDE5D8; --line:#E4DACA;
+  --gold:#D6AE66; --gold-light:#F2DDA8; --gold-dark:#8A6A2F;
+  --display:'Italiana',Georgia,'Times New Roman',serif;
+  --body:'Jost','Helvetica Neue',Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--ivory);color:var(--text);font-family:var(--body);font-weight:400;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--gold-dark)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.eyebrow{font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-dark)}
+.dark .eyebrow{color:var(--gold)}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0}
+h2{font-size:clamp(40px,6vw,64px);line-height:1.05}
+.head{display:flex;flex-direction:column;gap:14px}
+.center{align-items:center;text-align:center}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 32px;border-radius:999px;text-decoration:none;font-family:var(--body);font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--ink);border:0}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.btn-ghost:hover{background:rgba(214,174,102,.14)}
+
+/* Cabeçalho */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(14,12,10,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(214,174,102,.18)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand .sym{width:64px;height:39px;object-fit:contain}
+.brand .name{width:200px;height:24px;object-fit:contain}
+.nav{display:flex;align-items:center;gap:34px;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.nav a:not(.btn){color:#EDE5D8;text-decoration:none;transition:color .25s}
+.nav a:not(.btn):hover{color:var(--gold)}
+.nav .btn{min-height:44px;padding:0 22px;font-size:14px;letter-spacing:.12em}
+.menu-btn{display:none;width:46px;height:46px;border:1px solid rgba(214,174,102,.4);border-radius:12px;background:transparent;color:var(--gold);cursor:pointer;align-items:center;justify-content:center}
+
+/* Hero */
+.hero{position:relative;background:var(--ink);color:var(--ivory);padding:100px 0 0;overflow:hidden}
+.hero .glow{position:absolute;left:50%;top:30px;width:720px;height:520px;margin-left:-360px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,174,102,.28),rgba(214,174,102,0));animation:glow 6s ease-in-out infinite;pointer-events:none}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:.6}}
+.hero-inner{position:relative;max-width:1000px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center}
+.hero-logo{width:min(760px,100%);height:auto;animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero p{margin:0;max-width:620px;font-size:20px;font-weight:300;line-height:1.6;color:#D9D0C2}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.marquee{position:relative;margin-top:100px;border-top:1px solid rgba(214,174,102,.25);border-bottom:1px solid rgba(214,174,102,.25);overflow:hidden;padding:22px 0}
+.marquee-track{display:flex;width:max-content;gap:56px;font-family:var(--display);font-size:26px;letter-spacing:.2em;color:#CDBFA6;white-space:nowrap;animation:marq 28s linear infinite}
+.marquee-track .h{color:var(--gold)}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Coleção */
+.collection{padding:120px 0 100px}
+.collection-top{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px;flex-wrap:wrap}
+.tabs{display:flex;gap:10px;flex-wrap:wrap}
+.tab{min-height:46px;padding:0 24px;border-radius:999px;border:1px solid #CFC3AF;background:transparent;color:var(--text);font-family:var(--body);font-size:14px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.tab:hover{border-color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);color:#EFD9A6;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.card{display:flex;flex-direction:column;background:#fff;border-radius:18px;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s;animation:cardIn .5s ease both}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -28px rgba(26,23,20,.45)}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.card-img{position:relative;height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;overflow:hidden}
+.card-img > img.ph{width:130px;height:79px;object-fit:contain;opacity:.7;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover .card-img > img.ph{transform:scale(1.08) rotate(-2deg)}
+.card-img > img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover .card-img > img.photo{transform:scale(1.05)}
+.ph-label{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2)}
+.tag{position:absolute;left:14px;top:14px;padding:6px 12px;border-radius:999px;background:var(--ink);color:#EFD9A6;font-size:11px;letter-spacing:.2em;text-transform:uppercase;z-index:1}
+.fav{position:absolute;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:1;transition:transform .2s}
+.fav:active{transform:scale(.88)}
+.fav svg{fill:none;stroke:var(--gold-dark);stroke-width:1.6;transition:fill .2s}
+.fav[aria-pressed="true"] svg{fill:var(--gold-dark)}
+.card-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px}
+.card-name{font-size:17px}
+.card-price{font-size:15px;color:var(--muted-2)}
+.card-link{margin-top:8px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;font-weight:500}
+.fav-count{margin-top:36px;display:flex;justify-content:center;align-items:center;gap:12px;font-size:15px;color:var(--muted-2);text-align:center}
+
+/* Presencial / online */
+.ways{background:var(--sand);padding:110px 0}
+.ways .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.way{border-radius:24px;padding:56px;display:flex;flex-direction:column;gap:20px;min-height:340px;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.way:hover{transform:translateY(-6px);box-shadow:0 24px 48px -28px rgba(26,23,20,.45)}
+.way h3{font-size:clamp(32px,4vw,44px);line-height:1.1}
+.way p{margin:0;font-size:18px;font-weight:300;line-height:1.65}
+.way.dark{background:var(--ink);color:var(--ivory)}
+.way.dark p{color:#D9D0C2}
+.way.light{background:#fff}
+.way.light p{color:var(--muted)}
+
+/* Passos */
+.steps{padding:120px 0}
+.steps .head{margin-bottom:64px}
+.steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.step{text-align:left;cursor:pointer;font-family:var(--body);padding:40px 36px;border-radius:22px;border:1px solid var(--line);background:#fff;color:var(--text);display:flex;flex-direction:column;gap:18px;min-height:280px;transition:background .35s,color .35s,border-color .35s,transform .3s}
+.step:hover{transform:translateY(-2px)}
+.step .n{font-family:var(--display);font-size:72px;line-height:1;color:var(--gold-dark);transition:color .35s}
+.step .t{font-size:24px}
+.step .d{font-size:17px;font-weight:300;line-height:1.6;color:var(--muted);transition:color .35s}
+.step[aria-pressed="true"]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.step[aria-pressed="true"] .n{color:var(--gold)}
+.step[aria-pressed="true"] .d{color:#D9D0C2}
+
+/* Visite */
+.visit{background:var(--ink);color:var(--ivory);padding:120px 0}
+.visit .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;align-items:center}
+.visit-info{display:flex;flex-direction:column;gap:26px}
+.info-row{display:flex;gap:16px;align-items:flex-start;font-size:19px;font-weight:300;line-height:1.6;color:#E4DBCC}
+.info-row svg{flex-shrink:0;margin-top:3px}
+.info-row address{font-style:normal}
+.visit .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.visit-photo{position:relative;height:460px;border-radius:28px;background:var(--ink-2);border:1px solid rgba(214,174,102,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;overflow:hidden}
+.visit-photo .ph{width:220px;height:134px;object-fit:contain;opacity:.85}
+.visit-photo .ph-label{color:#BFB19A}
+
+/* FAQ */
+.faq{max-width:880px;margin:0 auto;padding:120px 40px}
+.faq .head{margin-bottom:52px}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:#fff;border-radius:16px;overflow:hidden}
+.faq-q{width:100%;min-height:72px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:0;background:transparent;cursor:pointer;font-family:var(--body);font-size:19px;color:var(--text);text-align:left}
+.faq-q .sign{font-family:var(--display);font-size:32px;color:var(--gold-dark);line-height:1;transition:transform .3s}
+.faq-q[aria-expanded="true"] .sign{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.faq-a > div{overflow:hidden}
+.faq-a p{margin:0;padding:0 28px 26px;font-size:17px;font-weight:300;line-height:1.65;color:var(--muted)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+
+/* Instagram */
+.insta{padding:0 40px 120px}
+.insta-box{max-width:1240px;margin:0 auto;border-radius:32px;background:var(--ink);padding:80px 64px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+.insta-box h2{color:var(--ivory);font-size:clamp(36px,5vw,56px);line-height:1.08}
+.insta-box .btn{flex-shrink:0}
+
+/* Rodapé */
+footer{background:var(--ink);color:#BFB19A;padding:64px 0 40px}
+footer .wrap{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+footer .logo{width:300px;height:auto}
+footer .addr{font-size:15px;font-weight:300}
+footer nav{display:flex;gap:28px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;flex-wrap:wrap;justify-content:center}
+footer nav a{color:#E4DBCC;text-decoration:none}
+footer nav a:hover{color:var(--gold)}
+footer hr{width:100%;border:0;height:1px;background:rgba(214,174,102,.18);margin:16px 0 0}
+footer small{font-size:13px;color:#9A8D78}
+
+/* Revelar ao rolar */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Responsivo */
+@media (max-width:1100px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .wrap{padding:0 24px}
+  .menu-btn{display:inline-flex}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--ink);border-bottom:1px solid rgba(214,174,102,.18);padding:8px 24px 24px;display:none}
+  .nav.open{display:flex}
+  .nav a:not(.btn){padding:16px 0;border-bottom:1px solid rgba(214,174,102,.12)}
+  .nav .btn{margin-top:16px}
+  .brand .name{width:160px}
+  .ways .wrap,.visit .wrap,.steps-grid{grid-template-columns:1fr}
+  .visit .wrap{gap:48px}
+  .visit-photo{height:320px}
+  .insta{padding:0 24px 90px}
+  .insta-box{flex-direction:column;align-items:flex-start;padding:56px 32px}
+  .collection,.steps,.faq{padding-top:90px;padding-bottom:90px}
+  .ways,.visit{padding:90px 0}
+  .faq{padding-left:24px;padding-right:24px}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .card-img{height:320px}
+  .way{padding:40px 28px;min-height:0}
+  .hero{padding-top:64px}
+  .hero p{font-size:18px}
+  .hero .ctas .btn{width:100%}
+  .marquee{margin-top:72px}
+  .marquee-track{font-size:20px;gap:36px}
+  .brand .sym{width:48px}
+  .brand .name{width:130px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="Studio Giulia, início">
+      <img class="sym" src="img/giulia-simbolo.png" alt="">
+      <img class="name" src="img/giulia-nome.png" alt="Studio Giulia">
+    </a>
+    <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="menu">
+      <a href="#colecao">Coleção</a>
+      <a href="#comprar">Como comprar</a>
+      <a href="#visite">Visite</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="https://www.instagram.com/studiogiulia__/" target="_blank" rel="noopener" class="btn btn-gold">Comprar online</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="inicio" class="hero dark">
+  <div class="glow"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Moda feminina &amp; acessórios · Timbó - SC</div>
+    <h1><img class="hero-logo" src="img/giulia-logo.png" alt="Studio Giulia" width="1722" height="774"></h1>
+    <p>Peças escolhidas com carinho para você se sentir linda todos os dias. Venha provar na loja ou compre online, de onde estiver.</p>
+    <div class="ctas">
+      <a href="#colecao" class="btn btn-gold">Ver coleção</a>
+      <a href="#visite" class="btn btn-ghost">Visitar a loja</a>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>ATENDIMENTO PRESENCIAL</span><span class="h">♡</span><span>VENDAS ONLINE</span><span class="h">♡</span><span>VESTUÁRIO FEMININO</span><span class="h">♡</span><span>ACESSÓRIOS</span><span class="h">♡</span><span>TIMBÓ · SANTA CATARINA</span><span class="h">♡</span>
+      <span>ATENDIMENTO PRESENCIAL</span><span class="h">♡</span><span>VENDAS ONLINE</span><span class="h">♡</span><span>VESTUÁRIO FEMININO</span><span class="h">♡</span><span>ACESSÓRIOS</span><span class="h">♡</span><span>TIMBÓ · SANTA CATARINA</span><span class="h">♡</span>
+    </div>
+  </div>
+</section>
+
+<section id="colecao" class="collection">
+  <div class="wrap">
+    <div class="collection-top reveal">
+      <div class="head">
+        <div class="eyebrow">A coleção</div>
+        <h2>Feita para o seu estilo</h2>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Categorias">
+        <button class="tab" role="tab" data-cat="novidades" aria-selected="true">Novidades</button>
+        <button class="tab" role="tab" data-cat="vestidos" aria-selected="false">Vestidos</button>
+        <button class="tab" role="tab" data-cat="conjuntos" aria-selected="false">Conjuntos</button>
+        <button class="tab" role="tab" data-cat="acessorios" aria-selected="false">Acessórios</button>
+      </div>
+    </div>
+    <div class="grid" id="grid" role="tabpanel"></div>
+    <div class="fav-count" aria-live="polite">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#8A6A2F"><path d="M12 20.5s-7.5-4.6-9.2-9.3C1.6 7.8 3.9 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.3 0 5.6 3.3 4.4 6.7-1.7 4.7-9.2 9.3-9.2 9.3z"/></svg>
+      <span id="favText">Toque no coração para salvar suas favoritas</span>
+    </div>
+  </div>
+</section>
+
+<section class="ways">
+  <div class="wrap">
+    <div class="way dark reveal">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D6AE66" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>
+      <div class="eyebrow" style="color:var(--gold)">Na loja</div>
+      <h3>Atendimento presencial, sem pressa</h3>
+      <p>Prove, combine e receba dicas de looks pessoalmente no nosso espaço em Timbó.</p>
+    </div>
+    <div class="way light reveal">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8A6A2F" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+      <div class="eyebrow">Online</div>
+      <h3>Compre de onde estiver</h3>
+      <p>Viu algo que amou? Chame a gente no Instagram e finalize sua compra com atendimento personalizado.</p>
+    </div>
+  </div>
+</section>
+
+<section id="comprar" class="steps">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">Como comprar online</div>
+      <h2>Simples como deve ser</h2>
+    </div>
+    <div class="steps-grid">
+      <button class="step reveal" type="button" aria-pressed="true"><span class="n">01</span><span class="t">Escolha suas peças</span><span class="d">Navegue pela coleção aqui ou no nosso Instagram e salve as que você amou.</span></button>
+      <button class="step reveal" type="button" aria-pressed="false"><span class="n">02</span><span class="t">Chame no direct</span><span class="d">Envie as peças e o seu tamanho. A gente confirma disponibilidade e tira suas dúvidas.</span></button>
+      <button class="step reveal" type="button" aria-pressed="false"><span class="n">03</span><span class="t">Receba ou retire</span><span class="d">Combine pagamento e entrega, ou retire pessoalmente na loja em Timbó.</span></button>
+    </div>
+  </div>
+</section>
+
+<section id="visite" class="visit dark">
+  <div class="wrap">
+    <div class="visit-info reveal">
+      <div class="eyebrow">Visite a loja</div>
+      <h2>Te esperamos em Timbó</h2>
+      <div class="info-row">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D6AE66" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <address>R. Oscár Piske, 1519 - Das Nações<br>Timbó - SC, 89120-000</address>
+      </div>
+      <div class="info-row">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D6AE66" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div>[Horário de funcionamento]</div>
+      </div>
+      <div class="ctas">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=R.+Osc%C3%A1r+Piske,+1519,+Timb%C3%B3+-+SC" target="_blank" rel="noopener" class="btn btn-gold">Como chegar</a>
+        <a href="https://www.instagram.com/studiogiulia__/" target="_blank" rel="noopener" class="btn btn-ghost">Falar com a gente</a>
+      </div>
+    </div>
+    <div class="visit-photo reveal">
+      <!-- Para usar uma foto real: coloque o arquivo em img/ e troque as duas linhas abaixo por
+           <img src="img/fachada.jpg" alt="Fachada da Studio Giulia" style="width:100%;height:100%;object-fit:cover"> -->
+      <img class="ph" src="img/giulia-simbolo.png" alt="">
+      <span class="ph-label">[Foto da fachada ou do interior]</span>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas" class="faq">
+  <div class="head center reveal">
+    <div class="eyebrow">Dúvidas</div>
+    <h2>Perguntas frequentes</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <button class="faq-q" type="button" aria-expanded="true"><span>Vocês vendem online?</span><span class="sign">+</span></button>
+      <div class="faq-a"><div><p>Sim! Atendemos pelo Instagram @studiogiulia__. É só chamar no direct com as peças que você quer.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false"><span>Onde fica a loja?</span><span class="sign">+</span></button>
+      <div class="faq-a"><div><p>R. Oscár Piske, 1519 - Das Nações, Timbó - SC, 89120-000.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false"><span>Quais formas de pagamento vocês aceitam?</span><span class="sign">+</span></button>
+      <div class="faq-a"><div><p>[Formas de pagamento]</p></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false"><span>Como funcionam as trocas?</span><span class="sign">+</span></button>
+      <div class="faq-a"><div><p>[Política de trocas]</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="insta-box dark reveal">
+    <div class="head">
+      <div class="eyebrow">@studiogiulia__</div>
+      <h2>Novidades toda semana no nosso Instagram</h2>
+    </div>
+    <a href="https://www.instagram.com/studiogiulia__/" target="_blank" rel="noopener" class="btn btn-gold">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E0C0A" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="#0E0C0A"/></svg>
+      Seguir no Instagram
+    </a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="logo" src="img/giulia-logo.png" alt="Studio Giulia" width="1722" height="774">
+    <div class="addr">R. Oscár Piske, 1519 - Das Nações · Timbó - SC, 89120-000</div>
+    <nav aria-label="Rodapé">
+      <a href="https://www.instagram.com/studiogiulia__/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#colecao">Coleção</a>
+      <a href="#visite">Visite</a>
+    </nav>
+    <hr>
+    <small>© <span id="year"></span> Studio Giulia · Todos os direitos reservados</small>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================
+   PRODUTOS — edite aqui.
+   Para cada peça: nome, preço e foto (coloque a foto na pasta img/).
+   Deixe foto: "" para mostrar o espaço reservado com a logo.
+   ========================================================== */
+const PRODUTOS = {
+  novidades: [
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" }
+  ],
+  vestidos: [
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" }
+  ],
+  conjuntos: [
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" }
+  ],
+  acessorios: [
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" },
+    { nome: "[Nome da peça]", preco: "[Preço]", foto: "" }
+  ]
+};
+const ETIQUETA = { novidades: "Novo", vestidos: "Vestido", conjuntos: "Conjunto", acessorios: "Acessório" };
+const INSTAGRAM = "https://www.instagram.com/studiogiulia__/";
+const TONS = ["#EFE6D8", "#E6DCCB", "#F2EBE0", "#E9E0D2"];
+
+const grid = document.getElementById("grid");
+const favText = document.getElementById("favText");
+let favoritos = {};
+try { favoritos = JSON.parse(localStorage.getItem("sg-favs") || "{}"); } catch (e) {}
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
+
+function atualizarContador(){
+  const n = Object.values(favoritos).filter(Boolean).length;
+  favText.textContent = n === 0
+    ? "Toque no coração para salvar suas favoritas"
+    : n + (n === 1 ? " peça favoritada" : " peças favoritadas") + ". Mostre pra gente no Instagram!";
+}
+
+function mostrar(cat){
+  grid.innerHTML = PRODUTOS[cat].map((p, i) => {
+    const key = cat + "-" + i;
+    const on = !!favoritos[key];
+    const img = p.foto
+      ? `<img class="photo" src="${esc(p.foto)}" alt="${esc(p.nome)}" loading="lazy">`
+      : `<img class="ph" src="img/giulia-simbolo.png" alt=""><span class="ph-label">[Foto da peça]</span>`;
+    return `<article class="card" style="animation-delay:${i * 70}ms">
+      <div class="card-img" style="background:${TONS[i % TONS.length]}">
+        ${img}
+        <span class="tag">${ETIQUETA[cat]}</span>
+        <button class="fav" type="button" data-key="${key}" aria-pressed="${on}" aria-label="Favoritar ${esc(p.nome)}">
+          <svg width="20" height="20" viewBox="0 0 24 24" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.2-9.3C1.6 7.8 3.9 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.3 0 5.6 3.3 4.4 6.7-1.7 4.7-9.2 9.3-9.2 9.3z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${esc(p.nome)}</div>
+        <div class="card-price">${esc(p.preco)}</div>
+        <a class="card-link" href="${INSTAGRAM}" target="_blank" rel="noopener">Quero essa</a>
+      </div>
+    </article>`;
+  }).join("");
+}
+
+grid.addEventListener("click", e => {
+  const b = e.target.closest(".fav");
+  if (!b) return;
+  const k = b.dataset.key;
+  favoritos[k] = !favoritos[k];
+  b.setAttribute("aria-pressed", favoritos[k]);
+  try { localStorage.setItem("sg-favs", JSON.stringify(favoritos)); } catch (e) {}
+  atualizarContador();
+});
+
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll(".tab").forEach(x => x.setAttribute("aria-selected", x === t));
+  mostrar(t.dataset.cat);
+}));
+
+document.querySelectorAll(".step").forEach(s => s.addEventListener("click", () => {
+  document.querySelectorAll(".step").forEach(x => x.setAttribute("aria-pressed", x === s));
+}));
+
+document.querySelectorAll(".faq-q").forEach(q => q.addEventListener("click", () => {
+  const item = q.closest(".faq-item");
+  const abrir = !item.classList.contains("open");
+  document.querySelectorAll(".faq-item").forEach(i => { i.classList.remove("open"); i.querySelector(".faq-q").setAttribute("aria-expanded", "false"); });
+  if (abrir) { item.classList.add("open"); q.setAttribute("aria-expanded", "true"); }
+}));
+
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.getElementById("menu");
+menuBtn.addEventListener("click", () => {
+  const aberto = menu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", aberto);
+});
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { menu.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }));
+
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), { threshold: .15 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+mostrar("novidades");
+atualizarContador();
+</script>
+</body>
+</html>
